@@ -1,5 +1,5 @@
 ---
-pipeline-git-uri: git@github.com:mgunter-pivotal/cf-SpringBootTrader.git
+pipeline-git-uri: https://mgunter-pivotal:Appl3sauce@github.com/mgunter-pivotal/cf-SpringBootTrader.git
 pipeline-git-branch: master
 accounts-service-git-uri: git@github.com:mgunter-pivotal/accounts-service.git
 accounts-service-git-branch: master
