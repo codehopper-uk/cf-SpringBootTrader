@@ -19,6 +19,7 @@ applications:
   path: $ARTIFACT_PATH
   memory: 512M
   instances: 1
+  buildpack: https://github.com/cloudfoundry/java-buildpack/releases/download/v3.10/java-buildpack-v3.10.zip
   timeout: 180
   services: [ $CF_APP_SERVICES ]
   env:
