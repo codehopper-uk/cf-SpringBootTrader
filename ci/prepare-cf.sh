@@ -28,21 +28,21 @@ fi
 target_space $CF_SPACE $create
 
 # Create Services
-if ! service_exists traderdb; then
+#if ! service_exists traderdb; then
   cf create-service $CF_DB_SERVICE
-fi
+#fi
 
-if ! service_exists config-server; then
+#if ! service_exists config-server; then
   cf create-service p-config-server standard config-server -c "{ \"git\": { \"uri\": \"$CF_CONFIG_SERVER_URI\", \"label\": \"$CF_CONFIG_SERVER_LABEL\" } }"
   wait_for_service_instance config-server $CF_SERVICE_PROVISION_TIMEOUT
-fi
+#fi
 
-if ! service_exists discovery-service; then
+#if ! service_exists discovery-service; then
   cf create-service p-service-registry standard discovery-service
   wait_for_service_instance discovery-service $CF_SERVICE_PROVISION_TIMEOUT
-fi
+#fi
 
-if ! service_exists circuit-breaker-dashboard; then
+#if ! service_exists circuit-breaker-dashboard; then
   cf create-service p-circuit-breaker-dashboard standard circuit-breaker-dashboard
   wait_for_service_instance circuit-breaker-dashboard $CF_SERVICE_PROVISION_TIMEOUT
-fi
+#fi
